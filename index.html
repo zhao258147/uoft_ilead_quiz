@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<!-- saved from url=(0064)http://desandro.github.io/3dtransforms/examples/carousel-01.html -->
+<html lang="en" class=" js csstransforms3d">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta property="og:image" content="img/frame1.png" />
+    <meta property="og:site_name" content="UofT Engineering iLead Program" />
+    <meta property="og:title" content="UofT iLead Program Online Quiz" />
+    <meta property="og:url" content="http://ilead.engineering.utoronto.ca" />
+    <meta property="og:description" content="What do cats, engineers and leadership have in common? I took this quiz" />
+    <meta property="og:type" content="webapp" />
+    <!-- disable zooming -->
+    <!--<meta name="viewport" content="initial-scale=1.0, user-scalable=0">-->
+
+    <link rel="stylesheet" href="http://desandro.github.io/3dtransforms/css/style.css" media="screen">
+    <link rel="stylesheet" href="css/carousel.css" media="screen">
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script type="text/javascript" src="js/angular.js"></script>
+    <script type="text/javascript" src="js/quiz.js"></script>
+
+</head>
+<!--<style type="text/css"></style><link type="text/css" rel="stylesheet" href="chrome-extension://cpngackimfmofbokmjmljamhdncknpmg/style.css"><script type="text/javascript" charset="utf-8" src="chrome-extension://cpngackimfmofbokmjmljamhdncknpmg/page_context.js"></script></head>-->
+<body screen_capture_injected="true" cz-shortcut-listen="true" ng-app="quizModule" data-ng-controller="QuizController">
+<base target="_parent" />;
+<section class="container">
+    <div id="carousel">
+        <div class="question">
+           <div class="top">
+               <div class="endleft">
+                   You are {{catmeme.title}}!
+               </div>
+               <div class="endright">
+                   <p>Share this quiz!</p>
+                   <a href="#"
+                      onclick="
+                        window.open(
+                          'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+                          'facebook-share-dialog',
+                          'width=626,height=436');
+                        return false;">
+                       <img src="img/facebook.jpeg" width="40px" height="20px">
+                   </a>
+                   <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://uoft.me/cats" data-text="What do cats, engineers and leadership have in common? I took this quiz @" data-via="ileaduoft" data-count="none">Tweet</a>
+                   <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+               </div>
+               <iframe id="youtube" width="120" height="90" src="//www.youtube.com/embed/n37tge5G9Lk" frameborder="0" allowfullscreen></iframe>           </div>
+           <div class="bot">
+               <div class="endleft">
+                   <img src={{catmeme.picture}} width="170" height="160">
+                   <p id="memetext">{{catmeme.text}}</p>
+                   <!--<iframe width="160" height="120" src="http://www.youtube.com/embed/BSE_saVX_2A" frameborder="0" allowfullscreen></iframe>-->
+               </div>
+               <div class="endright">
+                   <p>Yes, we shamelessly used internet cats in a
+                   vaguely educational manner. Check out ILead’s
+                   programs below! We tailored this based on your
+                   responses. Thanks! Why not share this quiz?</p>
+                   <a data-ng-repeat="option in finalOptions | orderBy:sort:true" href="{{option.link}}"><div class="choice" target="_parent">{{option.content}}</div></a>
+                   <a><div onclick='location.reload(true); return false;' id="retake"><-- Not you? Retake quiz!</div></a>
+               </div>
+           </div>
+            <img id="front-img" src="img/frame1.png" width="602px" height="402px">
+            <a><div id="start-button" data-increment="1" move-next>START QUIZ</div></a>
+        </div>
+
+        <div class="question" id={{questions[0].id}}>
+            <div class="top">
+                <div class="left">{{questions[0].question}}</div>
+                <div class="right">{{questions[0].title}}/5</div>
+            </div>
+            <div class="bot">
+                <div class="left">
+                    <a data-ng-repeat="choice in questions[0].choices"><div data-increment="1" choice-number={{choice.id}} class="choice" question-id={{questions[0].id}} move-next>
+                        <p>{{choice.text}}</p>
+                    </div></a>
+                </div>
+                <div class="right">
+                    <img src="img/frame-2-image.png">
+                </div>
+            </div>
+        </div>
+
+        <div class="question" id={{questions[1].id}}>
+            <div class="top">
+                <div class="left">{{questions[1].question}}</div>
+                <div class="right">{{questions[1].title}}/5</div>
+            </div>
+            <div class="bot">
+                <div class="left">
+                    <a data-ng-repeat="choice in questions[1].choices" ><div data-increment="1" choice-number={{choice.id}} class="choice" question-id={{questions[1].id}} move-next>
+                        <p>{{choice.text}}</p>
+                    </div></a>
+                </div>
+                <div class="right">
+                    <img src="img/frame-3-image.png">
+                </div>
+            </div>
+        </div>
+
+        <div class="question" id={{questions[2].id}}>
+            <div class="top">
+                <div class="left">{{questions[2].question}}</div>
+                <div class="right">{{questions[2].title}}/5</div>
+            </div>
+            <div class="bot">
+                <div class="left">
+                    <a data-ng-repeat="choice in questions[2].choices"><div data-increment="1" choice-number={{choice.id}} class="choice" question-id={{questions[2].id}} move-next>
+                        <p>{{choice.text}}</p>
+                    </div></a>
+                </div>
+                <div class="right">
+                    <img src="img/frame-4-image.png">
+                </div>
+            </div>
+        </div>
+        <div class="question" id={{questions[3].id}}>
+            <div class="top">
+                <div class="left">{{questions[3].question}}</div>
+                <div class="right">{{questions[3].title}}/5</div>
+            </div>
+            <div class="bot">
+                <div class="left">
+                    <a data-ng-repeat="choice in questions[3].choices"><div data-increment="1" choice-number={{choice.id}} class="choice" question-id={{questions[3].id}} move-next>
+                        <p>{{choice.text}}</p>
+                    </div></a>
+                </div>
+                <div class="right">
+                    <img src="img/frame-5-image.png">
+                </div>
+            </div>
+        </div>
+
+        <div class="question" id={{questions[4].id}}>
+            <div class="top">
+                <div class="left">{{questions[4].question}}</div>
+                <div class="right">{{questions[4].title}}/5</div>
+            </div>
+            <div class="bot">
+                <div class="left">
+                    <a data-ng-repeat="choice in questions[4].choices"><div data-increment="1" choice-number={{choice.id}} class="choice" question-id={{questions[4].id}} move-next>
+                        <p>{{choice.text}}</p>
+                    </div></a>
+                </div>
+                <div class="right">
+                    <img src="img/frame-6-image.png">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="http://desandro.github.io/3dtransforms/js/utils.js"></script>
+
+
+</body></html>

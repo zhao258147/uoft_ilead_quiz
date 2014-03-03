@@ -1,0 +1,302 @@
+body {
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    left: -17px;
+}
+
+.container {
+    width: 620px;
+    height: 420px;
+    position: relative;
+    margin: 0 auto 40px;
+    /*border: 1px solid #CCC;*/
+    -webkit-perspective: 1500px;
+    -moz-perspective: 1500px;
+    -o-perspective: 1500px;
+    perspective: 1500px;
+}
+
+#carousel {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    text-align: left;
+    -webkit-transform: translateZ( -520px );
+    -moz-transform: translateZ( -520px );
+    -o-transform: translateZ( -520px );
+    transform: translateZ( -520px );
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transition: -webkit-transform 1s;
+    -moz-transition: -moz-transform 1s;
+    -o-transition: -o-transform 1s;
+    transition: transform 1s;
+}
+
+#carousel .question {
+    display: block;
+    position: absolute;
+    width: 586px;
+    height: 386px;
+    padding: 8px;
+    left: 10px;
+    top: 10px;
+    /*border: 2px solid black;*/
+    line-height: 30px;
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    text-align: left;
+}
+
+#carousel .question:nth-child(1) { background: hsla(213, 100%, 18%, 1); }
+#carousel .question:nth-child(2) { background: hsla(42, 98%, 53%, 1); }
+#carousel .question:nth-child(3) { background: hsla(82, 50%, 49%, 1); }
+#carousel .question:nth-child(4) { background: hsla(297, 38%, 31%, 1); }
+#carousel .question:nth-child(5) { background: hsla(30, 92%, 54%, 1); }
+#carousel .question:nth-child(6) { background: hsla(190, 65%, 67%, 1); }
+
+
+#carousel .question:nth-child(1) {
+    -webkit-transform: rotateY(   0deg ) translateZ( 520px );
+    -moz-transform: rotateY(   0deg ) translateZ( 520px );
+    -o-transform: rotateY(   0deg ) translateZ( 520px );
+    transform: rotateY(   0deg ) translateZ( 520px );
+}
+#carousel .question:nth-child(2) {
+    -webkit-transform: rotateY(  60deg ) translateZ( 520px );
+    -moz-transform: rotateY(  60deg ) translateZ( 520px );
+    -o-transform: rotateY(  60deg ) translateZ( 520px );
+    transform: rotateY(  60deg ) translateZ( 520px );
+}
+#carousel .question:nth-child(3) {
+    -webkit-transform: rotateY(  120deg ) translateZ( 520px );
+    -moz-transform: rotateY(  120deg ) translateZ( 520px );
+    -o-transform: rotateY(  120deg ) translateZ( 520px );
+    transform: rotateY(  120deg ) translateZ( 520px );
+}
+#carousel .question:nth-child(4) {
+    -webkit-transform: rotateY( 180deg ) translateZ( 520px );
+    -moz-transform: rotateY( 180deg ) translateZ( 520px );
+    -o-transform: rotateY( 180deg ) translateZ( 520px );
+    transform: rotateY( 180deg ) translateZ( 520px );
+}
+#carousel .question:nth-child(5) {
+    -webkit-transform: rotateY( 240deg ) translateZ( 520px );
+    -moz-transform: rotateY( 240deg ) translateZ( 520px );
+    -o-transform: rotateY( 240deg ) translateZ( 520px );
+    transform: rotateY( 240deg ) translateZ( 520px );
+}
+#carousel .question:nth-child(6) {
+    -webkit-transform: rotateY( 300deg ) translateZ( 520px );
+    -moz-transform: rotateY( 300deg ) translateZ( 520px );
+    -o-transform: rotateY( 300deg ) translateZ( 520px );
+    transform: rotateY( 300deg ) translateZ( 520px );
+}
+
+.top {
+    /*width: 100%;*/
+    height: 20%;
+    position: relative;
+    /*top: 0px;*/
+    /*left: 0px;*/
+    margin: 15px;
+    /*border: 1px solid #CCC;*/
+    border-bottom: 2px solid black;
+}
+
+.endleft {
+    width: 30%;
+    height: 100%;
+    position: relative;
+    float: left;
+    margin-left: 20px;
+    line-height: 25px;
+    font-size: 25px;
+    /*border: 1px solid #CCC;*/
+}
+
+#front-img {
+    position: absolute;
+    top:0px;
+    left:0px;
+}
+
+#start-button {
+    position: absolute;
+    width: 200px;
+    height: 45px;
+    top: 180px;
+    left: 350px;
+    border-top-left-radius: 20px 10px;
+    border-bottom-right-radius: 20px 10px;
+    /*border: 2px solid #CCC;*/
+    background: white;
+    color: #00ACCC;
+    padding-top: 12px;
+    text-align: center;
+    z-index: 2;
+}
+
+#start-button:hover {
+    background-color: #00ACCC;
+    color: white;
+}
+
+.endright {
+    width: 60%;
+    height: 100%;
+    position: relative;
+    float: right;
+    margin-right: 20px;
+    line-height: 13px;
+    font-size: 13px;
+    /*border: 1px solid #CCC;*/
+}
+
+#youtube {
+    position: absolute;
+    left: 420px;
+    top: -15px;
+}
+
+.top .left {
+    width: 70%;
+    height: 100%;
+    position: relative;
+    float: left;
+    line-height: 25px;
+    font-size: 25px;
+    /*border: 1px solid #CCC;*/
+}
+
+.top .right {
+    width: 10%;
+    height: 100%;
+    position: relative;
+    float: right;
+    /*border: 1px solid #CCC;*/
+}
+
+.bot {
+    height: 65%;
+    position: relative;
+    /*border: 1px solid #CCC;*/
+}
+
+.bot .left {
+    visibility: hidden;
+    width: 60%;
+    height: 90%;
+    float: left;
+    margin-left: 10px;
+    line-height: 15px;
+    font-size: 15px;
+    /*border: 1px solid #CCC;*/
+}
+
+.bot .right {
+    width: 32%;
+    height: 90%;
+    margin: 10px;
+    float: right;
+    /*border: 1px solid #CCC;*/
+}
+
+.endright .choice {
+    /*height: 30px;*/
+    margin-top: 5px;
+    border-top-left-radius: 4px 4px;
+    border-bottom-right-radius: 4px 4px;
+    padding: 3px;
+    font-size: 12px;
+    background: hsla( 60, 16%, 90%, 0.9 );
+    color: hsla( 200, 100%, 50%, 0.94 );
+    border: 1px solid #CCC;
+}
+
+.choice:hover {
+    background: blue;
+    color: white;
+    border: 1px solid blue;
+}
+
+.bot .left .choice {
+    /*height: 30px;*/
+    border-top-left-radius: 20px 10px;
+    border-bottom-right-radius: 20px 10px;
+    margin-top: 5px;
+    padding-left: 6px;
+    padding-right: 6px;
+    background: hsla( 60, 16%, 90%, 0.9 );
+    border: 1px solid hsla( 60, 16%, 90%, 0.9 );
+}
+
+#retake{
+    width: 180px;
+    padding: 3px;
+    border-top-left-radius: 4px 4px;
+    border-bottom-right-radius: 4px 4px;
+    margin-top: 25px;
+    padding-left: 6px;
+    padding-right: 6px;
+    font-size: 12px;
+    background: hsla( 60, 16%, 90%, 0.9 );
+    color: hsla( 213, 100%, 18%, 1 );
+}
+
+#retake:hover {
+    background: hsla( 213, 100%, 18%, 1 );
+    color: white;
+    /*border: 1px solid blue;*/
+}
+
+#memetext{
+    font-size: 12px;
+    line-height: 12px;
+}
+#carousel .question:nth-child(1) .choice { color: hsla(213, 100%, 18%, 1); }
+#carousel .question:nth-child(2) .bot .left .choice { color: hsla(42, 98%, 53%, 1); }
+#carousel .question:nth-child(3) .bot .left .choice { color: hsla(82, 50%, 49%, 1); }
+#carousel .question:nth-child(4) .bot .left .choice { color: hsla(297, 38%, 31%, 1); }
+#carousel .question:nth-child(5) .bot .left .choice { color: hsla(30, 92%, 54%, 1); }
+#carousel .question:nth-child(6) .bot .left .choice { color: hsla(190, 65%, 67%, 1); }
+
+#carousel .question:nth-child(1) .choice:hover {
+    background: #002A5C;
+    border: 1px solid #002A5C;
+    color: white;
+}
+
+#carousel .question:nth-child(2) .bot .left .choice:hover {
+    background: #FDB813;
+    border: 1px solid #FDB813;
+    color: white;
+}
+
+#carousel .question:nth-child(3) .bot .left .choice:hover {
+    background: #8EBD3F;
+    border: 1px solid #8EBD3F;
+    color: white;
+}
+
+#carousel .question:nth-child(4) .bot .left .choice:hover {
+    background: #69306C;
+    border: 1px solid #69306C;
+    color: white;
+}
+
+#carousel .question:nth-child(5) .bot .left .choice:hover {
+    background: #F68B1F;
+    border: 1px solid #F68B1F;
+    color: white;
+}
+
+#carousel .question:nth-child(6) .bot .left .choice:hover {
+    background: #73CEE1;
+    border: 1px solid #73CEE1;
+    color: white;
+}
